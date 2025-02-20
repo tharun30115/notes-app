@@ -60,12 +60,19 @@ function Note({note}){
                     </button>
                 )}
 
-                {!isEditMode  && (
-                    <button onClick={(e) => setIsEditMode(true)}>
-                        <i className="fa fa-pencil"></i>
+                {isEditMode  && (
+                    <button onClick={handleSaveNote}>
+                        <i className="fa fa-save"></i>
+                    </button>
+                )}
+
+                {isEditMode  && (
+                    <button onClick={(e) => deleteNote(note.id)}>
+                        <i className="fa fa-trash"></i>
                     </button>
                 )}
             </div>
+
         </div>
     )
 
