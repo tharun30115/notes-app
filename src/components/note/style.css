@@ -9,7 +9,7 @@
 .notes-app .note textarea{
     resize: none;
     width: 100%;
-    min-height: 100px;
+    min-height: 150px;
     outline: none;
     border: none;
     background-color: transparent;

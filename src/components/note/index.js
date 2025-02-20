@@ -26,8 +26,8 @@ function Note({note}){
         textareaRef.current.style.height = "1px";
 
         textareaRef.current.style.minheight = (
-            Math.max(textareaRef.current.scrollHeight, 100)
-        ) + "px"
+            Math.max(textareaRef.current.scrollHeight, 100 )
+        ) + "px";
         textareaRef.current.style.height = null;
         textareaRef.current.style.maxheight = null;
     }
@@ -48,29 +48,29 @@ function Note({note}){
     return (
         <div className="note" style={{background: note.theme}}>
             <textarea
-            ref={textareaRef}
-            readOnly={!isEditMode}
-            onChange={(e) => setText(e.target.value)}
+                ref={textareaRef}
+                readOnly={!isEditMode}
+                onChange={(e) => setText(e.target.value)}
             >
-                {text}
+             {text}
             </textarea>
 
             <div className="footer">
                 <p className="date">{getDataString(note.timestamp)}</p>
                 {!isEditMode  && (
                     <button onClick={(e) => setIsEditMode(true)}>
-                        <i className="fa fa-pencil"></i>
+                        <i class='bx bx-pencil'></i>
                     </button>
                 )}
 
                 {isEditMode  && (
                     <button onClick={handleSaveNote}>
-                        <i className="fa fa-save"></i>
+                        <i class='bx bxs-save'></i>
                     </button>
                 )}
 
                     <button onClick={(e) => deleteNote(note.id)}>
-                        <i className="fa fa-trash"></i>
+                    <i class='bx bxs-trash' ></i>
                     </button>
             </div>
 

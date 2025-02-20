@@ -8,7 +8,7 @@ function NotesContainer(){
     const {notes} = useContext(NotesContext)
     return(
         <div className="notes-container">
-            <h2>Notes</h2>
+            <h2>Notes-App</h2>
             <div className="notes-list">
                 {notes.map(note => <Note note = {note} key = {note.id} />)}
             </div>
