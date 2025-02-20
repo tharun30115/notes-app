@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { createContext, useState } from "react";
 import Sidebar from "./components/sidebar";
+import NotesContainer from "./components/notes-container";
 
  export const NotesContext = createContext(null);
 
@@ -26,14 +27,25 @@ function App() {
     )
   }
 
+  const saveNote = (noteId, text ) => {
+    const note = notes.find(note => note.id === noteId);
+    note.text = text
+    note.editmode = false
+    setNotes([...notes])
+  }
+
   const value = {
-    notes
+    notes,
+    addNote,
+    deleteNote,
+    saveNote
   };
 
   return (
     <NotesContext.Provider value ={value}>
     <div className="notes-app">
       <Sidebar/>
+      <NotesContainer/>
     </div>
     </NotesContext.Provider>
   );
