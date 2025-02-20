@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { NotesContext } from "../../App";
+import './style.css'
 
 const colors = [
     "#ebcfad",

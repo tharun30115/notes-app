@@ -1,0 +1,12 @@
+.notes-app .notes-container{
+    padding: 1.5em;
+}
+.notes-app .notes-container h2 {
+    font-size: 1.5em;
+}
+.notes-app .notes-container .notes-list{
+    margin-top: 1em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+}

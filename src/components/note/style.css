@@ -1,0 +1,39 @@
+.notes-app .note{
+    display: flex;
+    flex-direction: column;
+    padding: 0.8em 0.8em 0.5em;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+.notes-app .note textarea{
+    resize: none;
+    width: 100%;
+    min-height: 100px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    flex:1;
+}
+.notes-app .note .footer{
+    padding: 0.5em 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.notes-app .note .footer p {
+    flex: 1;
+    color: #555;
+    font-size: 13px;
+}
+
+.notes-app .note .footer button{
+    width: 30px;   
+    height: 30px;
+    border-radius: 50%;
+    background: #222;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}

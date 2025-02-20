@@ -1,0 +1,35 @@
+.notes-app .sidebar {
+    text-align: center;
+    gap: 1em;
+    padding: 1.5em 0;
+    border-right: 1px solid #ccc;
+}
+.notes-app .sidebar .add-note-btn{
+    width: 40px;
+    height: 40px;
+    font-size: 1em;
+    background: transparent;
+    border: 2px solid #888;
+    border-radius: 50%;
+    color: #222;
+    cursor: pointer;
+}
+.notes-app .sidebar .colors-input-list{
+    margin-top: 1.5em;
+}
+.notes-app .sidebar .colors-input-list > div {
+    margin: 5px 0px;
+}
+.notes-app .sidebar .colors-input-list input{
+    display: none;
+}
+.notes-app .sidebar .colors-input-list label {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.notes-app .sidebar .colors-input-list input:checked + label{
+    border: 2px solid #555;
+}
