@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { NotesContext } from "../../App";
 
 function Note({note}){
@@ -23,7 +23,36 @@ function Note({note}){
         textareaRef.current.style.maxheight = "1px";
         textareaRef.current.style.minheight = "1px";
         textareaRef.current.style.height = "1px";
+
+        textareaRef.current.style.minheight = (
+            Math.max(textareaRef.current.scrollHeight, 100)
+        ) + "px"
+        textareaRef.current.style.height = null;
+        textareaRef.current.style.maxheight = null;
     }
+
+    useEffect(() => {
+        adjustTextareaHeight()
+    }, [text])
+
+    useEffect(() => {
+        window.addEventListener("resize", adjustTextareaHeight)
+        return () => {
+            window.removeEventListener("resize", adjustTextareaHeight)
+        }
+    }, [])
+
+    return (
+        <div className="note" style={{background: note.theme}}>
+            <textarea
+            ref={textareaRef}
+            readOnly={!isEditMode}
+            onChange={(e) => setText(e.target.value)}
+            >
+                {text}
+            </textarea>
+        </div>
+    )
 
 }
 
