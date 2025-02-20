@@ -6,7 +6,7 @@ function Note({note}){
     const { saveNote, deleteNote} = useContext(NotesContext);
 
     const [isEditMode, setIsEditMode] = useState(note.editmode)
-    const [text, setText] = useState(notes.text)
+    const [text, setText] = useState(note.text)
     const textareaRef = useRef(null);
 
     const handleSaveNote = () => {
@@ -55,7 +55,7 @@ function Note({note}){
             </textarea>
 
             <div className="footer">
-                <p className="date">{getDateString(note.timestamp)}</p>
+                <p className="date">{getDataString(note.timestamp)}</p>
                 {!isEditMode  && (
                     <button onClick={(e) => setIsEditMode(true)}>
                         <i className="fa fa-pencil"></i>
@@ -68,11 +68,9 @@ function Note({note}){
                     </button>
                 )}
 
-                {isEditMode  && (
                     <button onClick={(e) => deleteNote(note.id)}>
                         <i className="fa fa-trash"></i>
                     </button>
-                )}
             </div>
 
         </div>

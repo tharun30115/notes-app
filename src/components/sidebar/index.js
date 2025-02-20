@@ -17,7 +17,7 @@ function Sidebar(){
 
     return(
         <div className="sidebar">
-            <button className="add-note-btn" onClick={addNote}>
+            <button className="add-note-btn" onClick={() => addNote(selectedTheme)}>
                 <i className="fa fa-plus"></i>
             </button>
             <div className="colors-input-list">

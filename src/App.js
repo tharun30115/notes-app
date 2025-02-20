@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import Sidebar from "./components/sidebar";
 import NotesContainer from "./components/notes-container";
 
@@ -6,7 +6,13 @@ import NotesContainer from "./components/notes-container";
 
 function App() {
 
-  const [notes,setNotes] = useState([])
+  const [notes,setNotes] = useState(() => {
+    const notes = localStorage.getItem("notes-data")
+    if(notes){
+      return JSON.parse(notes)
+    }
+    return[]
+  })
 
   const addNote = (theme) => {
     setNotes([
@@ -33,6 +39,12 @@ function App() {
     note.editmode = false
     setNotes([...notes])
   }
+
+
+  useEffect(() => {
+    localStorage.setItem("notes-data", JSON.stringify(notes))
+  }, [notes])
+
 
   const value = {
     notes,
