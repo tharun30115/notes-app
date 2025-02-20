@@ -51,6 +51,21 @@ function Note({note}){
             >
                 {text}
             </textarea>
+
+            <div className="footer">
+                <p className="date">{getDateString(note.timestamp)}</p>
+                {!isEditMode  && (
+                    <button onClick={(e) => setIsEditMode(true)}>
+                        <i className="fa fa-pencil"></i>
+                    </button>
+                )}
+
+                {!isEditMode  && (
+                    <button onClick={(e) => setIsEditMode(true)}>
+                        <i className="fa fa-pencil"></i>
+                    </button>
+                )}
+            </div>
         </div>
     )
 
