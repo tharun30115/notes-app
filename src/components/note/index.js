@@ -35,12 +35,14 @@ function Note({note}){
         adjustTextareaHeight()
     }, [text])
 
+
     useEffect(() => {
         window.addEventListener("resize", adjustTextareaHeight)
         return () => {
             window.removeEventListener("resize", adjustTextareaHeight)
         }
     }, [])
+
 
     return (
         <div className="note" style={{background: note.theme}}>
@@ -77,5 +79,6 @@ function Note({note}){
     )
 
 }
+
 
 export default Note;
