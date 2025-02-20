@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { NotesContext } from "../../App";
 
 const colors = [
     "#ebcfad",
@@ -9,11 +10,14 @@ const colors = [
 ];
 
 function Sidebar(){
+
+    const {addNote} = useContext(NotesContext)
+
     const [selectedTheme, setSelectedTheme] = useState(colors[0]);
 
     return(
         <div className="sidebar">
-            <button className="add-note-btn">
+            <button className="add-note-btn" onClick={addNote}>
                 <i className="fa fa-plus"></i>
             </button>
             <div className="colors-input-list">
